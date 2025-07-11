@@ -51,11 +51,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Logo and Collapse Button */}
         <div className="flex items-center justify-between p-4 border-b border-border">
           {!collapsed && (
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 gradient-xenora rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">H</span>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 gradient-xenora rounded-lg flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-sm">X</span>
               </div>
-              <span className="font-semibold text-foreground">Halo</span>
+              <div className="flex flex-col">
+                <span className="font-bold text-foreground text-sm text-gradient-xenora">Xenora</span>
+                <span className="text-xs text-muted-foreground font-medium">Legal Suite</span>
+              </div>
             </div>
           )}
           

@@ -53,11 +53,14 @@ export const HaloDashboard = () => {
         <header className="bg-white/70 backdrop-blur-lg border-b border-border px-6 py-4 shadow-xenora-sm">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold">
-                <span className="text-gradient-xenora">Xenora</span>
-                <span className="text-foreground">AI</span>
-                <span className="text-lg font-medium text-muted-foreground ml-2">Halo</span>
-              </h1>
+              <div className="flex flex-col">
+                <h1 className="text-3xl font-bold text-gradient-xenora tracking-tight">
+                  Xenora
+                </h1>
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider -mt-1">
+                  Legal Management Suite
+                </p>
+              </div>
             </div>
             
             <div className="flex items-center space-x-4">
