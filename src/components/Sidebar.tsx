@@ -46,27 +46,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
   setCollapsed 
 }) => {
   return (
-    <div className={`fixed inset-y-0 left-0 z-50 bg-white border-r border-gray-200 transition-all duration-300 ${collapsed ? 'w-16' : 'w-64'}`}>
+    <div className={`fixed inset-y-0 left-0 z-50 bg-white/80 backdrop-blur-lg border-r border-border transition-all duration-300 shadow-xenora-md ${collapsed ? 'w-16' : 'w-64'}`}>
       <div className="flex flex-col h-full">
         {/* Logo and Collapse Button */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200">
+        <div className="flex items-center justify-between p-4 border-b border-border">
           {!collapsed && (
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 gradient-xenora rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">H</span>
               </div>
-              <span className="font-semibold text-gray-900">Halo</span>
+              <span className="font-semibold text-foreground">Halo</span>
             </div>
           )}
           
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-lg hover:bg-secondary/50 transition-colors"
           >
             {collapsed ? (
-              <ChevronRight className="w-4 h-4 text-gray-600" />
+              <ChevronRight className="w-4 h-4 text-muted-foreground" />
             ) : (
-              <ChevronLeft className="w-4 h-4 text-gray-600" />
+              <ChevronLeft className="w-4 h-4 text-muted-foreground" />
             )}
           </button>
         </div>
@@ -81,14 +81,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${isActive 
-                  ? 'bg-blue-50 text-blue-700 border border-blue-200' 
-                  : 'text-gray-700 hover:bg-gray-100'
+                className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-all duration-200 ${isActive 
+                  ? 'bg-accent/10 text-accent border border-accent/20 shadow-sm' 
+                  : 'text-muted-foreground hover:bg-secondary/50 hover:text-foreground'
                 }`}
               >
-                <Icon className={`w-5 h-5 ${isActive ? 'text-blue-600' : 'text-gray-500'}`} />
+                <Icon className={`w-5 h-5 ${isActive ? 'text-accent' : 'text-muted-foreground'}`} />
                 {!collapsed && (
-                  <span className={`font-medium ${isActive ? 'text-blue-700' : 'text-gray-700'}`}>
+                  <span className={`font-medium ${isActive ? 'text-accent' : 'text-muted-foreground'}`}>
                     {item.label}
                   </span>
                 )}
@@ -99,19 +99,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Pinned Items */}
         {!collapsed && (
-          <div className="px-4 py-4 border-t border-gray-200">
+          <div className="px-4 py-4 border-t border-border">
             <div className="flex items-center space-x-2 mb-3">
-              <Pin className="w-4 h-4 text-gray-500" />
-              <span className="text-sm font-medium text-gray-600">Pinned</span>
+              <Pin className="w-4 h-4 text-muted-foreground" />
+              <span className="text-sm font-medium text-muted-foreground">Pinned</span>
             </div>
             
             <div className="space-y-2">
               {pinnedItems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-2 px-2 py-1 rounded text-sm text-gray-600 hover:bg-gray-50 cursor-pointer"
+                  className="flex items-center space-x-2 px-2 py-1 rounded text-sm text-muted-foreground hover:bg-secondary/50 cursor-pointer transition-colors"
                 >
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-accent rounded-full"></div>
                   <span className="truncate">{item.label}</span>
                 </div>
               ))}

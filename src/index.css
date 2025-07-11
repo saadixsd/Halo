@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,89 +9,96 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* XenoraAI Color Scheme */
+    --background: 34 12% 96%; /* #faf4f2 */
+    --foreground: 248 35% 14%; /* #1a1a2e */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 248 35% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 248 35% 14%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 248 35% 14%; /* #1a1a2e */
+    --primary-foreground: 34 12% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 34 19% 92%; /* #f5ede9 */
+    --secondary-foreground: 248 28% 25%; /* #2c2c54 */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 34 19% 92%;
+    --muted-foreground: 248 28% 25%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 271 76% 53%; /* #8a2be2 */
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 34 19% 90%;
+    --input: 34 19% 90%;
+    --ring: 271 76% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* XenoraAI Accent Colors */
+    --xenora-purple: 271 76% 53%; /* #8a2be2 */
+    --xenora-pink: 328 100% 50%; /* #ff007f */
+    --xenora-orange: 24 100% 63%; /* #ff8c42 */
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 248 35% 14%;
+    --sidebar-primary: 271 76% 53%;
     --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 34 19% 95%;
+    --sidebar-accent-foreground: 248 35% 14%;
+    --sidebar-border: 34 19% 88%;
+    --sidebar-ring: 271 76% 53%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Glass effect variables */
+    --glass-bg: hsla(0, 0%, 100%, 0.1);
+    --glass-border: hsla(0, 0%, 100%, 0.2);
+    --shadow-sm: 0 4px 20px hsla(248, 35%, 14%, 0.08);
+    --shadow-md: 0 10px 40px hsla(248, 35%, 14%, 0.12);
+    --shadow-lg: 0 20px 60px hsla(248, 35%, 14%, 0.15);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 248 35% 14%;
+    --foreground: 34 12% 96%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 248 35% 14%;
+    --card-foreground: 34 12% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 248 35% 14%;
+    --popover-foreground: 34 12% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 34 12% 96%;
+    --primary-foreground: 248 35% 14%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 248 28% 17%;
+    --secondary-foreground: 34 12% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 248 28% 17%;
+    --muted-foreground: 34 12% 85%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 271 76% 53%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 248 28% 17%;
+    --input: 248 28% 17%;
+    --ring: 271 76% 53%;
+
+    --sidebar-background: 248 35% 10%;
+    --sidebar-foreground: 34 12% 96%;
+    --sidebar-primary: 271 76% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 248 28% 15%;
+    --sidebar-accent-foreground: 34 12% 96%;
+    --sidebar-border: 248 28% 15%;
+    --sidebar-ring: 271 76% 53%;
   }
 }
 
@@ -101,5 +109,53 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* XenoraAI Custom Utilities */
+@layer utilities {
+  .gradient-xenora {
+    background: linear-gradient(135deg, hsl(var(--xenora-purple)), hsl(var(--xenora-pink)), hsl(var(--xenora-orange)));
+  }
+  
+  .text-gradient-xenora {
+    background: linear-gradient(135deg, hsl(var(--xenora-purple)), hsl(var(--xenora-pink)), hsl(var(--xenora-orange)));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 8s ease-in-out infinite;
+  }
+
+  .glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .shadow-xenora-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-xenora-md {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-xenora-lg {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
