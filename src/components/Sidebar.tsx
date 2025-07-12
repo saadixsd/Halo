@@ -56,7 +56,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <span className="text-white font-bold text-sm">X</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-foreground text-sm text-gradient-xenora">Xenora</span>
+                <div className="flex items-baseline space-x-1">
+                  <span className="font-bold text-foreground text-sm text-gradient-xenora">Xenora</span>
+                  <span className="text-xs text-accent font-semibold">Halo</span>
+                </div>
                 <span className="text-xs text-muted-foreground font-medium">Legal Suite</span>
               </div>
             </div>

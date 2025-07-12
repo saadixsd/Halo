@@ -54,9 +54,12 @@ export const HaloDashboard = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex flex-col">
-                <h1 className="text-3xl font-bold text-gradient-xenora tracking-tight">
-                  Xenora
-                </h1>
+                <div className="flex items-baseline space-x-2">
+                  <h1 className="text-3xl font-bold text-gradient-xenora tracking-tight">
+                    Xenora
+                  </h1>
+                  <span className="text-lg font-semibold text-accent opacity-80">Halo</span>
+                </div>
                 <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider -mt-1">
                   Legal Management Suite
                 </p>
