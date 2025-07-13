@@ -153,9 +153,91 @@ All colors MUST be HSL.
   .shadow-xenora-lg {
     box-shadow: var(--shadow-lg);
   }
+
+  /* Harvey Specter sophistication meets Jarvis AI */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(26, 26, 46, 0.1);
+  }
+
+  .ai-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(45deg, hsl(var(--xenora-purple)), hsl(var(--xenora-pink)));
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    animation: aiPulse 3s ease-in-out infinite;
+  }
+
+  .nora-chat-trigger {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, hsl(var(--xenora-purple)), hsl(var(--xenora-pink)));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+    animation: noraFloat 3s ease-in-out infinite;
+  }
+
+  .harvey-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .harvey-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(26, 26, 46, 0.15);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  }
+
+  .jarvis-sidebar {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+    backdrop-filter: blur(25px);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
 }
 
 @keyframes gradientFlow {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+@keyframes aiPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes noraFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

@@ -20,9 +20,9 @@ import {
 } from 'lucide-react';
 
 const quickStats = [
-  { label: 'Active Cases', value: '12', icon: Briefcase, trend: '+12%', color: 'text-xenora-primary' },
-  { label: 'Billable Hours', value: '45', icon: Clock, trend: '+8%', color: 'text-xenora-secondary' },
-  { label: 'Revenue This Month', value: '$28,500', icon: DollarSign, trend: '+23%', color: 'text-xenora-accent' },
+  { label: 'Active Cases', value: '12', icon: Briefcase, trend: '+12%', color: 'text-accent' },
+  { label: 'Billable Hours', value: '45', icon: Clock, trend: '+8%', color: 'text-primary' },
+  { label: 'Revenue This Month', value: '$28,500', icon: DollarSign, trend: '+23%', color: 'text-green-600' },
   { label: 'Nora Queries', value: '127', icon: Bot, trend: '+45%', color: 'text-purple-600' },
 ];
 
@@ -48,159 +48,273 @@ const upcomingDeadlines = [
 
 export const DashboardHome = () => {
   return (
-    <div className="p-6 space-y-8 max-w-7xl mx-auto">
-      {/* Enhanced Welcome Header */}
+    <div className="p-8 space-y-8 max-w-7xl mx-auto min-h-full">
+      {/* Harvey Specter-style Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 gradient-xenora rounded-3xl opacity-90"></div>
-        <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 text-white">
+        <div className="absolute inset-0 gradient-xenora rounded-3xl opacity-95"></div>
+        <div className="relative glass-panel rounded-3xl border border-white/30 p-8 lg:p-12 text-white shadow-xenora-lg">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-            <div className="mb-6 lg:mb-0">
-              <div className="flex items-center space-x-3 mb-3">
-                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-white" />
+            <div className="mb-8 lg:mb-0 lg:flex-1">
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm ai-glow">
+                  <Zap className="w-8 h-8 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-2xl lg:text-3xl font-bold">Good morning, Alex!</h1>
-                  <p className="text-white/80">Ready to tackle today's legal challenges?</p>
+                <div className="flex-1">
+                  <h1 className="text-3xl lg:text-4xl font-bold mb-2 leading-tight">
+                    Good morning, Alex
+                  </h1>
+                  <p className="text-white/90 text-lg font-medium mb-3">
+                    Ready to deliver winning results today?
+                  </p>
+                  <p className="text-white/70 text-sm">
+                    Your AI-powered legal command center is ready for action
+                  </p>
                 </div>
+              </div>
+              
+              {/* Quick action buttons */}
+              <div className="flex flex-wrap gap-3">
+                <button className="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-xl text-white font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-white/20">
+                  Ask Nora AI
+                </button>
+                <button className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl text-white font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-white/20">
+                  New Case
+                </button>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold">85%</div>
-                <div className="text-sm text-white/80">Productivity</div>
+            
+            {/* Performance metrics */}
+            <div className="flex lg:flex-col items-center lg:items-end space-x-8 lg:space-x-0 lg:space-y-6">
+              <div className="text-center lg:text-right">
+                <div className="text-4xl lg:text-5xl font-bold mb-1">85%</div>
+                <div className="text-sm text-white/80 font-medium">Win Rate</div>
+                <div className="text-xs text-white/60">This Quarter</div>
               </div>
-              <div className="w-px h-12 bg-white/20"></div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">12</div>
-                <div className="text-sm text-white/80">Cases Today</div>
+              <div className="w-px h-16 lg:w-16 lg:h-px bg-white/20"></div>
+              <div className="text-center lg:text-right">
+                <div className="text-4xl lg:text-5xl font-bold mb-1">12</div>
+                <div className="text-sm text-white/80 font-medium">Active Cases</div>
+                <div className="text-xs text-white/60">In Progress</div>
               </div>
             </div>
           </div>
           
-          {/* Floating elements */}
-          <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
-          <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-white/5 rounded-full blur-lg"></div>
+          {/* Sophisticated floating elements */}
+          <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-r from-white/10 to-transparent rounded-full blur-2xl"></div>
+          <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-white/5 to-transparent rounded-full blur-xl"></div>
+          <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-white/40 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-white/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
       </div>
 
-      {/* Enhanced Quick Stats */}
+      {/* Harvey-style Performance Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {quickStats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="group bg-white/80 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:shadow-xenora-lg transition-all duration-500 hover:-translate-y-2 hover:bg-white/90">
-              <div className="flex items-center justify-between mb-4">
-                <div className={`p-3 rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className={`w-6 h-6 ${stat.color}`} />
+            <div 
+              key={index} 
+              className="harvey-card rounded-3xl p-6 border border-white/30 hover:shadow-xenora-lg group relative overflow-hidden"
+              style={{ 
+                animationDelay: `${index * 0.1}s`, 
+                animation: 'fadeInUp 0.6s ease-out both' 
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="relative">
+                    <div className={`p-4 rounded-2xl bg-gradient-to-br from-white to-white/80 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <Icon className={`w-7 h-7 ${stat.color}`} />
+                    </div>
+                    <div className="absolute -inset-1 bg-gradient-to-r from-xenora-purple/20 to-xenora-pink/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-1.5 text-green-600 text-sm font-semibold bg-green-50 px-3 py-1.5 rounded-xl border border-green-200">
+                    <TrendingUp className="w-4 h-4" />
+                    <span>{stat.trend}</span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-1 text-green-600 text-sm font-medium">
-                  <TrendingUp className="w-4 h-4" />
-                  <span>{stat.trend}</span>
+                
+                <div>
+                  <p className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wide">{stat.label}</p>
+                  <p className="text-4xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">{stat.value}</p>
                 </div>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-muted-foreground mb-1">{stat.label}</p>
-                <p className="text-3xl font-bold text-foreground">{stat.value}</p>
               </div>
             </div>
           );
         })}
       </div>
 
-      {/* Enhanced Quick Actions Grid */}
+      {/* Sophisticated Action Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {quickActions.map((action, index) => {
           const Icon = action.icon;
           return (
-            <button key={index} className={`group relative overflow-hidden ${action.color} rounded-2xl p-6 text-white transition-all duration-500 hover:scale-105 hover:shadow-2xl transform`}>
+            <button 
+              key={index} 
+              className={`group relative overflow-hidden ${action.color} rounded-3xl p-8 text-white transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl transform`}
+              style={{ 
+                animationDelay: `${(index + 4) * 0.1}s`, 
+                animation: 'fadeInUp 0.6s ease-out both' 
+              }}
+            >
               <div className="relative z-10">
-                <div className="flex items-center justify-between mb-4">
-                  <Icon className="w-8 h-8 text-white" />
-                  <ArrowUpRight className="w-5 h-5 text-white/70 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-3 rounded-2xl bg-white/20 backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <ArrowUpRight className="w-6 h-6 text-white/70 group-hover:text-white group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-500" />
                 </div>
-                <h3 className="font-bold text-lg mb-1">{action.title}</h3>
-                <p className="text-white/80 text-sm">{action.subtitle}</p>
+                
+                <div className="text-left">
+                  <h3 className="font-bold text-xl mb-2 group-hover:text-white transition-colors duration-300">{action.title}</h3>
+                  <p className="text-white/80 text-sm font-medium leading-relaxed">{action.subtitle}</p>
+                </div>
               </div>
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+              
+              {/* Sophisticated overlay effects */}
+              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500"></div>
+              <div className="absolute -top-2 -left-2 w-16 h-16 bg-white/5 rounded-full blur-xl"></div>
+              
+              {/* Premium border glow effect */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </button>
           );
         })}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Enhanced Recent Activity */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                <Activity className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground">Recent Activity</h3>
-            </div>
-            <button className="text-sm text-accent hover:text-accent/80 font-medium">View All</button>
-          </div>
-          <div className="space-y-4">
-            {recentActivity.map((activity, index) => {
-              const Icon = activity.icon;
-              return (
-                <div key={index} className="group flex items-center space-x-4 p-4 rounded-xl hover:bg-secondary/30 transition-all duration-300 hover:scale-[1.02]">
-                  <div className={`p-3 rounded-xl ${activity.color}`}>
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-foreground text-sm">{activity.title}</p>
-                    <p className="text-muted-foreground text-xs">{activity.subtitle}</p>
-                  </div>
-                  <div className="text-xs text-muted-foreground">{activity.time}</div>
+        {/* Sophisticated Recent Activity Panel */}
+        <div 
+          className="harvey-card rounded-3xl p-8 border border-white/30 hover:shadow-xenora-lg group relative overflow-hidden"
+          style={{ 
+            animationDelay: '0.8s', 
+            animation: 'fadeInUp 0.6s ease-out both' 
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg ai-glow">
+                  <Activity className="w-6 h-6 text-white" />
                 </div>
-              );
-            })}
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">Recent Activity</h3>
+                  <p className="text-sm text-muted-foreground">Latest case updates & AI insights</p>
+                </div>
+              </div>
+              <button className="px-4 py-2 text-sm text-accent hover:text-accent/80 font-semibold bg-accent/10 hover:bg-accent/20 rounded-xl transition-all duration-300 border border-accent/20">
+                View All
+              </button>
+            </div>
+            
+            <div className="space-y-4">
+              {recentActivity.map((activity, index) => {
+                const Icon = activity.icon;
+                return (
+                  <div 
+                    key={index} 
+                    className="group flex items-center space-x-4 p-5 rounded-2xl glass-panel hover:bg-white/60 transition-all duration-300 hover:scale-[1.01] border border-white/20"
+                    style={{ 
+                      animationDelay: `${(index + 10) * 0.1}s`, 
+                      animation: 'fadeInUp 0.5s ease-out both' 
+                    }}
+                  >
+                    <div className={`p-3 rounded-xl ${activity.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-semibold text-foreground text-sm mb-1">{activity.title}</p>
+                      <p className="text-muted-foreground text-xs leading-relaxed">{activity.subtitle}</p>
+                    </div>
+                    <div className="text-xs text-muted-foreground bg-secondary/30 px-3 py-1 rounded-full font-medium">
+                      {activity.time}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
-        {/* Enhanced Upcoming Deadlines */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
-                <Target className="w-5 h-5 text-white" />
+        {/* Sophisticated Upcoming Deadlines Panel */}
+        <div 
+          className="harvey-card rounded-3xl p-8 border border-white/30 hover:shadow-xenora-lg group relative overflow-hidden"
+          style={{ 
+            animationDelay: '0.9s', 
+            animation: 'fadeInUp 0.6s ease-out both' 
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-transparent to-red-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg ai-glow">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">Critical Deadlines</h3>
+                  <p className="text-sm text-muted-foreground">Upcoming legal milestones</p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-foreground">Upcoming Deadlines</h3>
+              <button className="px-4 py-2 text-sm text-accent hover:text-accent/80 font-semibold bg-accent/10 hover:bg-accent/20 rounded-xl transition-all duration-300 border border-accent/20">
+                View Calendar
+              </button>
             </div>
-            <button className="text-sm text-accent hover:text-accent/80 font-medium">View Calendar</button>
-          </div>
-          <div className="space-y-4">
-            {upcomingDeadlines.map((deadline, index) => (
-              <div key={index} className="group p-4 rounded-xl border border-border hover:border-accent/30 hover:bg-accent/5 transition-all duration-300">
-                <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-semibold text-foreground text-sm">{deadline.case}</h4>
-                  <div className={`flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium ${
-                    deadline.priority === 'high' 
-                      ? 'bg-red-100 text-red-700' 
-                      : deadline.priority === 'medium' 
-                      ? 'bg-orange-100 text-orange-700' 
-                      : 'bg-green-100 text-green-700'
-                  }`}>
-                    <div className={`w-2 h-2 rounded-full ${
+            
+            <div className="space-y-4">
+              {upcomingDeadlines.map((deadline, index) => (
+                <div 
+                  key={index} 
+                  className="group p-5 rounded-2xl glass-panel border border-white/20 hover:bg-white/60 transition-all duration-300 hover:scale-[1.01]"
+                  style={{ 
+                    animationDelay: `${(index + 14) * 0.1}s`, 
+                    animation: 'fadeInUp 0.5s ease-out both' 
+                  }}
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="font-bold text-foreground text-base">{deadline.case}</h4>
+                    <div className={`flex items-center space-x-2 px-4 py-2 rounded-full text-xs font-bold shadow-sm ${
                       deadline.priority === 'high' 
-                        ? 'bg-red-500' 
+                        ? 'bg-red-100 text-red-700 border border-red-200' 
                         : deadline.priority === 'medium' 
-                        ? 'bg-orange-500' 
-                        : 'bg-green-500'
-                    }`}></div>
-                    <span>{deadline.daysLeft} days left</span>
+                        ? 'bg-orange-100 text-orange-700 border border-orange-200' 
+                        : 'bg-green-100 text-green-700 border border-green-200'
+                    }`}>
+                      <div className={`w-2.5 h-2.5 rounded-full ${
+                        deadline.priority === 'high' 
+                          ? 'bg-red-500 animate-pulse' 
+                          : deadline.priority === 'medium' 
+                          ? 'bg-orange-500' 
+                          : 'bg-green-500'
+                      }`}></div>
+                      <span>{deadline.daysLeft} days left</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground text-sm mb-3 font-medium">{deadline.task}</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground bg-secondary/30 px-3 py-1.5 rounded-lg">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-medium">{deadline.deadline}</span>
+                    </div>
+                    {deadline.priority === 'high' && (
+                      <div className="flex items-center space-x-1 text-red-600">
+                        <AlertCircle className="w-4 h-4" />
+                        <span className="text-xs font-semibold">URGENT</span>
+                      </div>
+                    )}
                   </div>
                 </div>
-                <p className="text-muted-foreground text-xs mb-1">{deadline.task}</p>
-                <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                  <Calendar className="w-3 h-3" />
-                  <span>{deadline.deadline}</span>
-                  {deadline.priority === 'high' && <AlertCircle className="w-3 h-3 text-red-500" />}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

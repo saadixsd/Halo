@@ -96,12 +96,44 @@ export default {
 				'gradientFlow': {
 					'0%, 100%': { backgroundPosition: '0% 50%' },
 					'50%': { backgroundPosition: '100% 50%' }
+				},
+				'fadeInUp': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slideInRight': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateX(100%)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				},
+				'aiPulse': {
+					'0%, 100%': { opacity: '0.6' },
+					'50%': { opacity: '1' }
+				},
+				'noraFloat': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'gradientFlow': 'gradientFlow 8s ease-in-out infinite'
+				'gradientFlow': 'gradientFlow 8s ease-in-out infinite',
+				'fade-in-up': 'fadeInUp 0.6s ease-out',
+				'slide-in-right': 'slideInRight 0.5s ease-out',
+				'ai-pulse': 'aiPulse 3s ease-in-out infinite',
+				'nora-float': 'noraFloat 3s ease-in-out infinite'
 			}
 		}
 	},
