@@ -49,61 +49,67 @@ const upcomingDeadlines = [
 export const DashboardHome = () => {
   return (
     <div className="p-8 space-y-8 max-w-7xl mx-auto min-h-full">
-      {/* Harvey Specter-style Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 gradient-xenora rounded-3xl opacity-95"></div>
-        <div className="relative glass-panel rounded-3xl border border-white/30 p-8 lg:p-12 text-white shadow-xenora-lg">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-            <div className="mb-8 lg:mb-0 lg:flex-1">
-              <div className="flex items-start space-x-4 mb-6">
-                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm ai-glow">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h1 className="text-3xl lg:text-4xl font-bold mb-2 leading-tight">
-                    Good morning, Alex
-                  </h1>
-                  <p className="text-white/90 text-lg font-medium mb-3">
-                    Ready to deliver winning results today?
-                  </p>
-                  <p className="text-white/70 text-sm">
-                    Your AI-powered legal command center is ready for action
-                  </p>
-                </div>
-              </div>
-              
-              {/* Quick action buttons */}
-              <div className="flex flex-wrap gap-3">
-                <button className="px-6 py-3 bg-white/20 hover:bg-white/30 rounded-xl text-white font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-white/20">
-                  Ask Nora AI
-                </button>
-                <button className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl text-white font-medium transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-white/20">
-                  New Case
-                </button>
-              </div>
+      {/* Refined Professional Header */}
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4">
+            <div className="w-16 h-16 gradient-xenora rounded-2xl flex items-center justify-center shadow-lg relative overflow-hidden">
+              <span className="text-white font-bold text-xl relative z-10">AS</span>
+              <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
             </div>
-            
-            {/* Performance metrics */}
-            <div className="flex lg:flex-col items-center lg:items-end space-x-8 lg:space-x-0 lg:space-y-6">
-              <div className="text-center lg:text-right">
-                <div className="text-4xl lg:text-5xl font-bold mb-1">85%</div>
-                <div className="text-sm text-white/80 font-medium">Win Rate</div>
-                <div className="text-xs text-white/60">This Quarter</div>
-              </div>
-              <div className="w-px h-16 lg:w-16 lg:h-px bg-white/20"></div>
-              <div className="text-center lg:text-right">
-                <div className="text-4xl lg:text-5xl font-bold mb-1">12</div>
-                <div className="text-sm text-white/80 font-medium">Active Cases</div>
-                <div className="text-xs text-white/60">In Progress</div>
-              </div>
+            <div>
+              <h1 className="text-3xl font-bold text-foreground mb-1">Good morning, Alex</h1>
+              <p className="text-muted-foreground font-medium">Ready to deliver winning results today?</p>
             </div>
           </div>
-          
-          {/* Sophisticated floating elements */}
-          <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-r from-white/10 to-transparent rounded-full blur-2xl"></div>
-          <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-white/5 to-transparent rounded-full blur-xl"></div>
-          <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-white/40 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-white/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
+        <div className="flex items-center space-x-6">
+          {/* Performance indicators */}
+          <div className="flex items-center space-x-6 glass-panel px-6 py-4 rounded-2xl border border-white/20">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-foreground">85%</div>
+              <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">Win Rate</div>
+            </div>
+            <div className="w-px h-10 bg-border"></div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-foreground">12</div>
+              <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">Active Cases</div>
+            </div>
+            <div className="w-px h-10 bg-border"></div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-green-600">$28.5K</div>
+              <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">This Month</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Actions Row */}
+      <div className="flex items-center justify-between glass-panel p-6 rounded-2xl border border-white/20 mb-8">
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 text-green-600 bg-green-50 px-3 py-1.5 rounded-full border border-green-200">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold">Nora AI Online</span>
+          </div>
+          <div className="text-sm text-muted-foreground">
+            <span className="font-medium">127</span> queries processed today
+          </div>
+        </div>
+        
+        <div className="flex items-center space-x-3">
+          <button className="flex items-center space-x-2 px-6 py-3 bg-accent text-accent-foreground rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Bot className="w-5 h-5" />
+            <span>Ask Nora</span>
+          </button>
+          <button className="flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Plus className="w-5 h-5" />
+            <span>New Case</span>
+          </button>
+          <button className="flex items-center space-x-2 px-6 py-3 glass-panel text-foreground rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-white/20">
+            <Upload className="w-5 h-5" />
+            <span>Upload</span>
+          </button>
         </div>
       </div>
 
