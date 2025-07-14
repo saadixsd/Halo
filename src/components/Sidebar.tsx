@@ -8,8 +8,9 @@ import {
   Calendar, 
   FileText, 
   Bot, 
-  BarChart3, 
   Upload,
+  Search,
+  Settings,
   ChevronLeft,
   ChevronRight,
   Pin
@@ -25,13 +26,14 @@ interface SidebarProps {
 
 const menuItems = [
   { id: 'dashboard' as ActiveTab, label: 'Dashboard', icon: Home },
-  { id: 'cases' as ActiveTab, label: 'Cases', icon: Briefcase },
-  { id: 'clients' as ActiveTab, label: 'Clients', icon: Users },
-  { id: 'billing' as ActiveTab, label: 'Billing', icon: CreditCard },
-  { id: 'calendar' as ActiveTab, label: 'Calendar', icon: Calendar },
   { id: 'ask-nora' as ActiveTab, label: 'Ask Nora', icon: Bot },
-  { id: 'upload' as ActiveTab, label: 'Upload & Analyze', icon: Upload },
-  { id: 'analytics' as ActiveTab, label: 'Analytics', icon: BarChart3 },
+  { id: 'cases' as ActiveTab, label: 'Cases', icon: Briefcase },
+  { id: 'upload' as ActiveTab, label: 'Files', icon: Upload },
+  { id: 'calendar' as ActiveTab, label: 'Calendar', icon: Calendar },
+  { id: 'clients' as ActiveTab, label: 'Clients', icon: Users },
+  { id: 'billing' as ActiveTab, label: 'Invoices', icon: CreditCard },
+  { id: 'research' as ActiveTab, label: 'Research', icon: Search },
+  { id: 'settings' as ActiveTab, label: 'Settings', icon: Settings },
 ];
 
 const pinnedItems = [

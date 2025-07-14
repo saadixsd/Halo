@@ -106,31 +106,32 @@ export const CasesView = () => {
   });
 
   return (
-    <div className="p-6">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+    <div className="p-8 space-y-8 max-w-7xl mx-auto">
+      {/* Enhanced Header */}
+      <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Cases</h1>
-          <p className="text-gray-600">Manage and track all your legal cases</p>
+          <h1 className="text-3xl font-bold text-foreground mb-2">Case Management</h1>
+          <p className="text-muted-foreground">Track and manage all your legal cases with AI-powered insights</p>
         </div>
-        <button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-          <Plus className="w-4 h-4" />
+        <button className="flex items-center space-x-2 px-6 py-3 bg-accent text-accent-foreground rounded-xl font-medium hover:scale-105 transition-all duration-300 shadow-lg">
+          <Plus className="w-5 h-5" />
           <span>New Case</span>
         </button>
       </div>
 
-      {/* Filters and Search */}
-      <div className="flex items-center space-x-4 mb-6">
-        <div className="flex-1 relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-          <input
-            type="text"
-            placeholder="Search cases..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-        </div>
+      {/* Enhanced Filters and Search */}
+      <div className="harvey-card rounded-2xl p-6 border border-white/30">
+        <div className="flex items-center space-x-4">
+          <div className="flex-1 relative">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder="Search cases, clients, or case numbers..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 glass-panel rounded-xl focus:outline-none focus:ring-2 focus:ring-accent/50 border border-white/20 text-foreground placeholder:text-muted-foreground/70"
+            />
+          </div>
         
         <select
           value={statusFilter}
@@ -144,10 +145,11 @@ export const CasesView = () => {
           <option value="overdue">Overdue</option>
         </select>
         
-        <button className="flex items-center space-x-2 px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-          <Filter className="w-4 h-4" />
-          <span>Filter</span>
-        </button>
+          <button className="flex items-center space-x-2 px-3 py-2 glass-panel rounded-xl hover:bg-white/60 transition-all duration-300 border border-white/20">
+            <Filter className="w-4 h-4" />
+            <span>Filter</span>
+          </button>
+        </div>
       </div>
 
       {/* Cases Grid */}

@@ -8,9 +8,10 @@ import { UploadAnalyze } from './UploadAnalyze';
 import { ClientsView } from './ClientsView';
 import { BillingView } from './BillingView';
 import { CalendarView } from './CalendarView';
-import { AnalyticsView } from './AnalyticsView';
+import { LegalResearchView } from './LegalResearchView';
+import { SettingsView } from './SettingsView';
 
-export type ActiveTab = 'dashboard' | 'cases' | 'clients' | 'billing' | 'calendar' | 'templates' | 'ask-nora' | 'analytics' | 'upload';
+export type ActiveTab = 'dashboard' | 'cases' | 'clients' | 'billing' | 'calendar' | 'ask-nora' | 'upload' | 'research' | 'settings';
 
 export const HaloDashboard = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
@@ -30,10 +31,12 @@ export const HaloDashboard = () => {
         return <CalendarView />;
       case 'ask-nora':
         return <AskNora />;
-      case 'analytics':
-        return <AnalyticsView />;
       case 'upload':
         return <UploadAnalyze />;
+      case 'research':
+        return <LegalResearchView />;
+      case 'settings':
+        return <SettingsView />;
       default:
         return <DashboardHome />;
     }
