@@ -48,31 +48,31 @@ export const Sidebar: React.FC<SidebarProps> = ({
   setCollapsed 
 }) => {
   return (
-    <div className={`fixed inset-y-0 left-0 z-50 xenora-sidebar border-r border-white/20 transition-all duration-500 ease-out shadow-xenora-lg ${collapsed ? 'w-16' : 'w-64'}`}>
+    <div className={`fixed inset-y-0 left-0 z-50 jarvis-sidebar border-r border-white/20 transition-all duration-500 ease-out shadow-xenora-lg ${collapsed ? 'w-16' : 'w-64'}`}>
       <div className="flex flex-col h-full relative">
-        {/* Premium gradient overlay */}
+        {/* Sophisticated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-white/5 pointer-events-none"></div>
         
-        {/* Premium Logo and Collapse Button */}
+        {/* Logo and Collapse Button */}
         <div className="flex items-center justify-between p-4 border-b border-white/20 relative z-10">
           {!collapsed && (
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 gradient-xenora rounded-2xl flex items-center justify-center shadow-lg relative overflow-hidden ai-glow">
-                <span className="text-white font-bold text-lg relative z-10">X</span>
+              <div className="w-10 h-10 gradient-xenora rounded-xl flex items-center justify-center shadow-lg relative overflow-hidden ai-glow">
+                <span className="text-white font-bold text-sm relative z-10">X</span>
               </div>
               <div className="flex flex-col">
                 <div className="flex items-baseline space-x-1">
-                  <span className="font-bold text-foreground text-lg text-gradient-xenora">Xenora</span>
-                  <span className="text-sm text-accent font-semibold">Halo</span>
+                  <span className="font-bold text-foreground text-sm text-gradient-xenora">Xenora</span>
+                  <span className="text-xs text-accent font-semibold">Halo</span>
                 </div>
-                <span className="text-xs text-muted-foreground/80 font-medium">Professional Legal Suite</span>
+                <span className="text-xs text-muted-foreground/80 font-medium">AI Legal Suite</span>
               </div>
             </div>
           )}
           
           {collapsed && (
-            <div className="w-12 h-12 gradient-xenora rounded-2xl flex items-center justify-center shadow-lg mx-auto ai-glow">
-              <span className="text-white font-bold text-lg">X</span>
+            <div className="w-10 h-10 gradient-xenora rounded-xl flex items-center justify-center shadow-lg mx-auto ai-glow">
+              <span className="text-white font-bold text-sm">X</span>
             </div>
           )}
           

@@ -57,42 +57,35 @@ export const HaloDashboard = () => {
       />
       
       <div className={`flex-1 flex flex-col transition-all duration-500 ease-out relative z-10 ${sidebarCollapsed ? 'ml-16' : 'ml-64'}`}>
-        {/* Premium XenoraAI Header */}
-        <header className="glass-premium border-b border-white/20 px-6 py-5 shadow-xenora-lg relative overflow-hidden">
+        {/* Enhanced Harvey Specter-style Header */}
+        <header className="glass-panel border-b border-white/20 px-6 py-5 shadow-xenora-md relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
           <div className="relative z-10 flex items-center justify-between">
             <div className="flex items-center space-x-6">
               <div className="flex flex-col">
                 <div className="flex items-center space-x-3">
-                  <div className="w-14 h-14 gradient-xenora rounded-2xl flex items-center justify-center shadow-lg relative overflow-hidden ai-glow">
-                    <span className="text-white font-bold text-xl relative z-10">X</span>
+                  <div className="w-12 h-12 gradient-xenora rounded-xl flex items-center justify-center shadow-lg relative overflow-hidden">
+                    <span className="text-white font-bold text-lg relative z-10">X</span>
+                    <div className="absolute inset-0 bg-white/10 rounded-xl"></div>
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-baseline space-x-2">
-                      <h1 className="text-4xl font-bold text-gradient-xenora tracking-tight">
+                      <h1 className="text-3xl font-bold text-gradient-xenora tracking-tight">
                         Xenora
                       </h1>
-                      <span className="text-xl font-semibold text-accent/90">Halo</span>
+                      <span className="text-lg font-semibold text-accent/90">Halo</span>
                     </div>
                     <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider -mt-1">
-                      Professional Legal Suite
+                      AI-Powered Legal Suite
                     </p>
                   </div>
                 </div>
               </div>
               
-              {/* Mission Badge */}
-              <div className="hidden lg:flex items-center space-x-2 mission-badge px-4 py-2 rounded-full text-xs font-semibold">
-                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
-                </svg>
-                Everyone Deserves an Advocate
-              </div>
-              
               {/* AI Status Indicator */}
-              <div className="hidden lg:flex items-center space-x-2 px-4 py-2 rounded-full glass-premium">
+              <div className="hidden lg:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-xs font-medium text-green-700">Nora AI Online</span>
+                <span className="text-xs font-medium text-green-700">Nora Online</span>
               </div>
             </div>
             
@@ -101,19 +94,19 @@ export const HaloDashboard = () => {
               <div className="relative group">
                 <input
                   type="text"
-                  placeholder="Ask Nora anything or search globally..."
-                  className="w-96 px-5 py-3 pl-12 pr-4 text-sm glass-premium rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/30 transition-all duration-300 placeholder:text-muted-foreground/70"
+                  placeholder="Ask Nora or search globally..."
+                  className="w-96 px-5 py-3 pl-12 pr-4 text-sm glass-panel rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent/30 transition-all duration-300 placeholder:text-muted-foreground/70"
                 />
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-accent group-focus-within:text-xenora-pink transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-5 w-5 text-muted-foreground group-focus-within:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
               </div>
               
               {/* User Profile */}
-              <div className="flex items-center space-x-3 glass-premium px-4 py-2 rounded-2xl hover:bg-white/40 transition-all duration-300 cursor-pointer group">
-                <div className="w-10 h-10 gradient-xenora rounded-2xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+              <div className="flex items-center space-x-3 glass-panel px-4 py-2 rounded-xl hover:bg-white/60 transition-all duration-300 cursor-pointer group">
+                <div className="w-9 h-9 gradient-xenora rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
                   <span className="text-white text-sm font-bold">AS</span>
                 </div>
                 <div className="hidden md:flex flex-col">

@@ -47,150 +47,147 @@ const upcomingDeadlines = [
 ];
 
 export const DashboardHome = () => {
-  const currentHour = new Date().getHours();
-  const greeting = currentHour < 12 ? 'Good morning' : currentHour < 18 ? 'Good afternoon' : 'Good evening';
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-background p-8 space-y-8">
-      {/* Premium Welcome Hero Section */}
-      <div className="glass-hero rounded-3xl p-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-xenora-purple/5 via-transparent to-xenora-pink/5"></div>
-        <div className="relative z-10">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
-              <div className="w-20 h-20 gradient-xenora rounded-3xl flex items-center justify-center shadow-lg relative overflow-hidden ai-glow">
-                <span className="text-white font-bold text-2xl relative z-10">AS</span>
-              </div>
-              <div className="space-y-2">
-                <h1 className="text-5xl font-bold text-foreground">
-                  {greeting}, <span className="text-gradient-xenora">Alex</span> ✨
-                </h1>
-                <p className="text-lg text-muted-foreground font-medium">
-                  Ready to make justice accessible with Xenora AI
-                </p>
-              </div>
+    <div className="p-8 space-y-8 max-w-7xl mx-auto min-h-full">
+      {/* Refined Professional Header */}
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4">
+            <div className="w-16 h-16 gradient-xenora rounded-2xl flex items-center justify-center shadow-lg relative overflow-hidden">
+              <span className="text-white font-bold text-xl relative z-10">AS</span>
+              <div className="absolute inset-0 bg-white/10 rounded-2xl"></div>
             </div>
-            
-            {/* Performance Indicators */}
-            <div className="flex items-center space-x-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">98.5%</div>
-                <div className="text-sm text-muted-foreground font-medium">AI Accuracy</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent">4.9/5</div>
-                <div className="text-sm text-muted-foreground font-medium">Client Rating</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-xenora-orange">127</div>
-                <div className="text-sm text-muted-foreground font-medium">Cases Won</div>
-              </div>
-            </div>
-          </div>
-          
-          {/* AI Status and Mission */}
-          <div className="mt-8 flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2 glass-premium px-4 py-2 rounded-full">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-green-700">Nora AI Active</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Activity className="w-4 h-4" />
-                <span>24 tasks automated today</span>
-              </div>
-            </div>
-            
-            <div className="mission-badge px-6 py-3 rounded-full text-sm font-semibold">
-              Everyone Deserves an Advocate 🏛️
+            <div>
+              <h1 className="text-3xl font-bold text-foreground mb-1">Good morning, Alex</h1>
+              <p className="text-muted-foreground font-medium">Ready to deliver winning results today?</p>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Premium Quick Actions */}
-      <div className="glass-premium rounded-3xl p-8">
-        <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center space-x-2">
-          <Star className="w-6 h-6 text-accent" />
-          <span>Quick Actions</span>
-        </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <button className="action-button p-6 rounded-2xl text-left transition-all duration-300 group relative overflow-hidden">
-            <div className="flex flex-col items-center text-center space-y-3">
-              <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
-                <Bot className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-white">Ask Nora</div>
-                <div className="text-sm text-white/80">Get instant legal insights</div>
-              </div>
+        <div className="flex items-center space-x-6">
+          {/* Performance indicators */}
+          <div className="flex items-center space-x-6 glass-panel px-6 py-4 rounded-2xl border border-white/20">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-foreground">85%</div>
+              <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">Win Rate</div>
             </div>
+            <div className="w-px h-10 bg-border"></div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-foreground">12</div>
+              <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">Active Cases</div>
+            </div>
+            <div className="w-px h-10 bg-border"></div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-green-600">$28.5K</div>
+              <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">This Month</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Actions Row */}
+      <div className="flex items-center justify-between glass-panel p-6 rounded-2xl border border-white/20 mb-8">
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 text-green-600 bg-green-50 px-3 py-1.5 rounded-full border border-green-200">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold">Nora AI Online</span>
+          </div>
+          <div className="text-sm text-muted-foreground">
+            <span className="font-medium">127</span> queries processed today
+          </div>
+        </div>
+        
+        <div className="flex items-center space-x-3">
+          <button className="flex items-center space-x-2 px-6 py-3 bg-accent text-accent-foreground rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Bot className="w-5 h-5" />
+            <span>Ask Nora</span>
           </button>
-          
-          <button className="action-button p-6 rounded-2xl text-left transition-all duration-300 group relative overflow-hidden">
-            <div className="flex flex-col items-center text-center space-y-3">
-              <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
-                <Upload className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-white">Upload Document</div>
-                <div className="text-sm text-white/80">Analyze contracts & files</div>
-              </div>
-            </div>
+          <button className="flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Plus className="w-5 h-5" />
+            <span>New Case</span>
           </button>
-          
-          <button className="action-button p-6 rounded-2xl text-left transition-all duration-300 group relative overflow-hidden">
-            <div className="flex flex-col items-center text-center space-y-3">
-              <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
-                <Plus className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-white">New Case</div>
-                <div className="text-sm text-white/80">Start case management</div>
-              </div>
-            </div>
-          </button>
-          
-          <button className="action-button p-6 rounded-2xl text-left transition-all duration-300 group relative overflow-hidden">
-            <div className="flex flex-col items-center text-center space-y-3">
-              <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
-                <FileText className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <div className="font-semibold text-white">Create Invoice</div>
-                <div className="text-sm text-white/80">Generate client billing</div>
-              </div>
-            </div>
+          <button className="flex items-center space-x-2 px-6 py-3 glass-panel text-foreground rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-white/20">
+            <Upload className="w-5 h-5" />
+            <span>Upload</span>
           </button>
         </div>
       </div>
 
-      {/* Premium Statistics Grid */}
+      {/* Harvey-style Performance Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {quickStats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div
-              key={index}
-              className="stat-card rounded-3xl p-6 relative overflow-hidden group"
-              style={{ animationDelay: `${index * 0.1}s`, animation: 'fadeInUp 0.6s ease-out' }}
+            <div 
+              key={index} 
+              className="harvey-card rounded-3xl p-6 border border-white/30 hover:shadow-xenora-lg group relative overflow-hidden"
+              style={{ 
+                animationDelay: `${index * 0.1}s`, 
+                animation: 'fadeInUp 0.6s ease-out both' 
+              }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br from-xenora-purple to-xenora-pink flex items-center justify-center shadow-lg`}>
-                  <Icon className="w-6 h-6 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="relative">
+                    <div className={`p-4 rounded-2xl bg-gradient-to-br from-white to-white/80 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <Icon className={`w-7 h-7 ${stat.color}`} />
+                    </div>
+                    <div className="absolute -inset-1 bg-gradient-to-r from-xenora-purple/20 to-xenora-pink/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-1.5 text-green-600 text-sm font-semibold bg-green-50 px-3 py-1.5 rounded-xl border border-green-200">
+                    <TrendingUp className="w-4 h-4" />
+                    <span>{stat.trend}</span>
+                  </div>
                 </div>
-                <div className={`flex items-center space-x-1 text-sm font-semibold text-green-600`}>
-                  <TrendingUp className="w-4 h-4" />
-                  <span>{stat.trend}</span>
+                
+                <div>
+                  <p className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wide">{stat.label}</p>
+                  <p className="text-4xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">{stat.value}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Sophisticated Action Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {quickActions.map((action, index) => {
+          const Icon = action.icon;
+          return (
+            <button 
+              key={index} 
+              className={`group relative overflow-hidden ${action.color} rounded-3xl p-8 text-white transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl transform`}
+              style={{ 
+                animationDelay: `${(index + 4) * 0.1}s`, 
+                animation: 'fadeInUp 0.6s ease-out both' 
+              }}
+            >
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-3 rounded-2xl bg-white/20 backdrop-blur-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <ArrowUpRight className="w-6 h-6 text-white/70 group-hover:text-white group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-500" />
+                </div>
+                
+                <div className="text-left">
+                  <h3 className="font-bold text-xl mb-2 group-hover:text-white transition-colors duration-300">{action.title}</h3>
+                  <p className="text-white/80 text-sm font-medium leading-relaxed">{action.subtitle}</p>
                 </div>
               </div>
               
-              <div className="space-y-1">
-                <div className="text-3xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
-              </div>
-            </div>
+              {/* Sophisticated overlay effects */}
+              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:blur-xl transition-all duration-500"></div>
+              <div className="absolute -top-2 -left-2 w-16 h-16 bg-white/5 rounded-full blur-xl"></div>
+              
+              {/* Premium border glow effect */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-white/20 via-transparent to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </button>
           );
         })}
       </div>
